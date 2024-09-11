@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro de Números</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Filtrar Números</h1>
+        
+        <div class="form-group">
+            <label for="numberInput">Ingresa un número:</label>
+            <input type="number" class="form-control" id="numberInput" min="1">
+        </div>
+        
+        <button class="btn btn-primary" onclick="filtrarNumeros()">Mostrar Resultado</button>
+        
+        <h2 class="mt-4">Resultados:</h2>
+        <div id="result"></div>
+    </div>
+
+    <script src="ejer1.js"></script>
+</body>
+</html>
