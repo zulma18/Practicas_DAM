@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Estudiante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color:antiquewhite;
+            font-family: 'Times New Roman', Times, serif;
+
+
+        }
+        h1 {
+            color: rgb(90, 7, 168);
+        }
+        #resultado {
+            margin-top: 20px;
+        }
+        button {
+            background-color:blueviolet;
+            color: aliceblue;
+            padding: 10px 20px;
+            font-size: 15px;
+
+            border-radius: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Información del Estudiante</h1>
+    
+    <button onclick="mostrarInfo()">Mostrar Información del Estudiante</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        // Creación del objeto estudiante
+        let estudiante = {
+            nombre: "Zulma Guevara",
+            edad: 28,
+            carrera: "Ingeniería en Desarrollo de software",
+            calificaciones: [8, 9, 7],
+
+            // Función para calcular el promedio de las calificaciones
+            calcularPromedio: function() {
+                let suma = this.calificaciones.reduce((acumulado, calificacion) => acumulado + calificacion, 0);
+                return suma / this.calificaciones.length;
+            },
+
+            // Función para mostrar toda la información del estudiante
+            mostrarInfo: function() {
+                return `
+                    <p><strong>Nombre:</strong> ${this.nombre}</p>
+                    <p><strong>Edad:</strong> ${this.edad}</p>
+                    <p><strong>Carrera:</strong> ${this.carrera}</p>
+                    <p><strong>Calificaciones:</strong> ${this.calificaciones.join(", ")}</p>
+                    <p><strong>Promedio:</strong> ${this.calcularPromedio().toFixed(2)}</p>
+                `;
+            }
+        };
+
+        // Función para mostrar la información en la página
+        function mostrarInfo() {
+            document.getElementById("resultado").innerHTML = estudiante.mostrarInfo();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción del Carro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: rgb(245, 210, 245);
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        button {
+            background-color:rgb(211, 11, 161);
+            color: antiquewhite;
+            border-radius: 5rem;
+            font-size: 15px;
+            padding: 10px 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descripción del Carro</h1>
+
+    <!-- Botón para mostrar la descripción del carro -->
+    <button onclick="mostrarDescripcion()">Mostrar Descripción del Carro</button>
+    
+    <!-- Contenedor donde se mostrará la descripción -->
+    <div id="resultado"></div>
+
+    <script>
+        // Creación del objeto carro
+        let carro = {
+            marca: "Toyota",
+            modelo: "Corolla",
+            año: 2020,
+
+            // Función que retorna la descripción del carro
+            descripción: function() {
+                return `El carro es un ${this.marca} ${this.modelo} del año ${this.año}.`;
+            }
+        };
+
+        // Función para mostrar la descripción en la página
+        function mostrarDescripcion() {
+            document.getElementById("resultado").innerHTML = carro.descripción();
+        }
+    </script>
+</body>
+</html>
