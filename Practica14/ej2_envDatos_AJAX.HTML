@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar datos con Ajax</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+        <button onclick="enviarDatos(e)">Enviar</button>
+        <div id="respuesta"></div>
+    </form>
+
+<script>
+    function enviarDatos(e) {
+        e.preventDefault()
+        let xhr = new XMLHttpRequest()
+        // esta es una demostracion del envio de datos por post
+        // por lo tanto no es funcional a menos que se ejecute en un servidot Apache
+        xhr.open('POST', 'ejemplo2.php', true)
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200){
+                document.getElementById('respuesta').innerHTML = xhr.responseText
+            }
+        }
+        let nombre =  document.getElementById('nombre').value
+        xhr.send('Nombre: ' + nombre)
+    }
+</script>
+</body>
+</html>
