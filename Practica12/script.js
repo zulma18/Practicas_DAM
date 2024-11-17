@@ -1,3 +1,4 @@
+//Variables
 const contenFilas = document.querySelector("#filas-content")
 const templateFilas = document.querySelector("#filas-template")
 
